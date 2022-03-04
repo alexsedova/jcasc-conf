@@ -15,8 +15,9 @@ credentials:
   system:
     domainCredentials:
       - credentials:
-         - string:
-            description: "API token for github alexsedova"
-            id: "github"
-            scope: GLOBAL
-            secret: ${github}
+        - usernamePassword:
+          description: "github token"
+          id: "github"
+          password: ${github}
+          scope: GLOBAL
+          username: "alexsedova"
