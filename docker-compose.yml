@@ -36,5 +36,9 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
       - /var/lib/docker:/var/lib/docker
 
+secrets:
+  github:
+    file: $HOME/secrets/github.token
+
 volumes:
   new_jenkins_home:

@@ -4,10 +4,19 @@ jenkins:
   mode: NORMAL
   scmCheckoutRetryCount: 3
 
-
   securityRealm:
     local:
       allowsSignup: false
       users:
        - id: ${JENKINS_RUNNER:-admin}
          password: ${JENKINS_PASSWORD:-admin}
+
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+         - string:
+            description: "API token for github alexsedova"
+            id: "github"
+            scope: GLOBAL
+            secret: ${github}
